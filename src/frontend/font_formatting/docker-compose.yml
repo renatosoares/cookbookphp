@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  font_format_app:
+    image: httpd:2.4
+    container_name: font_format_app
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./:/usr/local/apache2/htdocs/
