@@ -1,24 +1,9 @@
+import formatting from './Formatting';
+
 $(document).ready(function () {
-    function clear () {
-        $('#paragraph').removeClass('smaller')
-            .removeClass('medium')
-            .removeClass('bigger')
-    }
+    formatting.clear();
 
-    $('#button-smaller').click(function () {
-        clear();
-        $('#paragraph').addClass('smaller');
-    });
+    formatting.action();
 
-    $('#button-medium').click(function () {
-        clear();
-        $('#paragraph').addClass('medium');
-    });
-
-    $('#button-bigger').click(function () {
-        clear();
-        $('#paragraph').addClass('bigger');
-    });
-
-    $('#paragraph').addClass('medium');
+    formatting.defaultAction();
 });
