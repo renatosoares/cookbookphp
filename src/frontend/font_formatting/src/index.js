@@ -1,3 +1,4 @@
+require('./index.css');
 import formatting from './Formatting';
 
 $(document).ready(function () {

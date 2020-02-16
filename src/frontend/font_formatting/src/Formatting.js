@@ -1,7 +1,8 @@
 function clear () {
-    $('#paragraph').removeClass('smaller')
+    $('#paragraph')
+        .removeClass('smaller')
         .removeClass('medium')
-        .removeClass('bigger')
+        .removeClass('bigger');
 }
 
 function action () {
