@@ -1,0 +1,28 @@
+version: '3'
+services:
+  grains_of_sand_php:
+    build:
+      context: .
+      dockerfile: .services/php/Dockerfile
+      args:
+        uid: 1000
+    container_name: grains_of_sand_php
+    tty: true
+    environment:
+      - APACHE_RUN_USER=#1000
+      - APACHE_RUN_GROUP=#1000
+    working_dir: /var/www/cookbook.d3v/src/backend/grains_of_sand
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/www/cookbook.d3v/src/backend/grains_of_sand/:/var/www/cookbook.d3v/src/backend/grains_of_sand/
+    networks:
+      - grains_of_sand_network
+
+networks:
+  grains_of_sand_network:
+    driver: bridge
+volumes:
+  grains_of_sand_dbdata:
+    driver: local
